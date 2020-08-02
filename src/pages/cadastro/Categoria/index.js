@@ -32,13 +32,14 @@ function CadastroCategoria() {
   useEffect(() => {
     const URL_TOP = 'http://localhost:8080/categorias';
     fetch(URL_TOP)
-    .then(async (respostaDoServidor) => {
-      const resposta = await respostaDoServidor.json();
-      setCategorias([
-        ...resposta,
-      ]);
-    })
-  
+      .then(async (respostaDoServidor) => {
+        const resposta = await respostaDoServidor.json();
+        setCategorias([
+          ...resposta,
+        ]);
+      });
+  }, []);
+
   return (
     <PageDefault>
       <h1>
